@@ -1,0 +1,13 @@
+version: '2.3'
+services:
+ websrv:
+  image: httpd:latest
+  volumes:
+    - ./site:/usr/local/apache2/htdocs
+  ports:
+   - "80:80"
+  networks:
+   - rede
+networks:
+  rede:
+    driver: bridge
